@@ -3,3 +3,4 @@ Dist
 .env
 Keys
 *.pem
+backend/backend.log
