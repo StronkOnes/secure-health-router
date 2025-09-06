@@ -1,0 +1,5 @@
+Fastapi
+Uvicorn[standard]
+Scikit-learn
+Joblib
+Pydantic

@@ -1,0 +1,14 @@
+Openapi: 3.0.1
+Info:
+Title: Secure Health Router API
+Version: 0.1.0
+Paths:
+/auth/login:
+Post:
+Summary: Login and return JWT
+/encounters:
+Post:
+Summary: Submit pseudonymized encounter (encrypted payload)
+/triage:
+Post:
+Summary: Submit features to triage model

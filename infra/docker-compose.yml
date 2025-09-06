@@ -1,0 +1,30 @@
+Version: "3.8"
+Services:
+Mongo:
+Image: mongo:6.0
+Restart: unless-stopped
+Volumes:
+Mongo-data:/data/db
+Ports:
+"27017:27017"
+Minio:
+Image: minio/minio
+Command: server /data
+Environment:
+MINIO_ROOT_USER: minio
+MINIO_ROOT_PASSWORD: minio123
+Ports:
+"9000:9000"
+Backend:
+Build: ../backend
+Ports:
+"4000:4000"
+Depends_on:
+- mongo
+- minio
+Ml:
+Build: ../ml
+Ports:
+"8000:8000"
+Volumes:
+Mongo-data:
